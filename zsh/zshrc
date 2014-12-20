@@ -11,32 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 # Customize to your needs...
 
-alias lime="sublime -n"
-alias tw="open -a /Applications/TextWrangler.app"
-alias of="open ."
-
-# Directories:
-#
-
-# ITM Hashes
- hash -d itm=~/Arbeit/ITM
- hash -d vanet=~itm/vanet
- hash -d tr=~itm/testbed-runtime/
-
- alias itm='nocorrect ~itm'
-
- hash -d ws=~/Documents/workspace/
- hash -d tmt=~/Uni/tmtProject
- hash -d ma=~/Studium/Masterarbeit
- hash -d gorv=~/gocode/src/github.com/TobiasMende/go-run-verify
-
- # Project Shortcuts
- alias tmt='nocorrect ~tmt'
-
- alias cp1='nocorrect ~vanet/janea-android'
- alias cp2='nocorrect ~itm/ProgUebung'
- alias cp3='nocorrect ~tr'
-
+[[ -s "$HOME/.zshrc-local" ]] && . "$HOME/.zshrc-local"
 
  # Tool Shortcuts
  alias mci='mvn clean install'
@@ -52,12 +27,6 @@ alias of="open ."
  alias f='fasd -f'        # file
  alias sd='fasd -sid'     # interactive directory selection
  alias sf='fasd -sif'     # interactive file selection
-
- # brew shortcuts
- alias bri='brew install'
- alias brh='brew home'
- alias brs='brew search'
- alias brinf='brew info'
 
 alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
 
