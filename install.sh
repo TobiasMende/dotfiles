@@ -8,7 +8,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-dotfiles="vim/vimrc vim/vim zsh/zprezto zsh/zsh zsh/zlogin zsh/zlogout zsh/zpreztorc zsh/zprofile zsh/zshenv zsh/zshrc"
+dotfiles="vim/vimrc vim/vim zsh/zsh zsh/zlogin zsh/zlogout zsh/zpreztorc zsh/zprofile zsh/zshenv zsh/zshrc"
 ##########
 
 # create dotfiles_old in homedir
