@@ -1,0 +1,78 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+# Customize to your needs...
+
+alias lime="sublime -n"
+alias tw="open -a /Applications/TextWrangler.app"
+alias of="open ."
+
+# Directories:
+#
+
+# ITM Hashes
+ hash -d itm=~/Arbeit/ITM
+ hash -d vanet=~itm/vanet
+ hash -d tr=~itm/testbed-runtime/
+
+ alias itm='nocorrect ~itm'
+
+ hash -d ws=~/Documents/workspace/
+ hash -d tmt=~/Uni/tmtProject
+ hash -d ma=~/Studium/Masterarbeit
+ hash -d gorv=~/gocode/src/github.com/TobiasMende/go-run-verify
+
+ # Project Shortcuts
+ alias tmt='nocorrect ~tmt'
+
+ alias cp1='nocorrect ~vanet/janea-android'
+ alias cp2='nocorrect ~itm/ProgUebung'
+ alias cp3='nocorrect ~tr'
+
+
+ # Tool Shortcuts
+ alias mci='mvn clean install'
+
+ alias gradle='gradle --daemon'
+ alias gi='gradle install --daemon'
+ alias gci='gradle clean install --daemon'
+
+ # fasd shortcuts
+ alias a='fasd -a'        # any
+ alias s='fasd -si'       # show / search / select
+ alias d='fasd -d'        # directory
+ alias f='fasd -f'        # file
+ alias sd='fasd -sid'     # interactive directory selection
+ alias sf='fasd -sif'     # interactive file selection
+
+ # brew shortcuts
+ alias bri='brew install'
+ alias brh='brew home'
+ alias brs='brew search'
+ alias brinf='brew info'
+
+alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
+
+
+mkgo (){
+		mkdir -p $1 && cd $1
+}
+
+
+autoload predict-on
+predict-toggle() {
+  ((predict_on=1-predict_on)) && predict-on || predict-off
+}
+  zle -N predict-toggle
+  bindkey '^Z'   predict-toggle
+  zstyle ':predict' toggle true
+  zstyle ':predict' verbose true
+
