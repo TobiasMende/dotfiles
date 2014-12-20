@@ -17,11 +17,10 @@ mkdir -p $olddir
 echo "...done"
 
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
-
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
-
+mkdir vim/vim/backups
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 
 
