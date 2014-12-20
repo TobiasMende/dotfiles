@@ -39,3 +39,5 @@ for file in $dotfiles; do
     ln -s $dir/$file ~/.$name
 done
 echo "...done"
+
+echo "TODO: Set zsh as default shell: chsh -s /bin/zsh"
