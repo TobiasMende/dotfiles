@@ -21,3 +21,8 @@ if (( $+commands[fortune] )); then
     print
   fi
 fi
+
+#Customize to your needs...
+[[ -s "$HOME/.zlogin-local" ]] && . "$HOME/.zlogin-local"
+
+
