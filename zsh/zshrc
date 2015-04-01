@@ -10,31 +10,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 # Customize to your needs...
-
 [[ -s "$HOME/.zshrc-local" ]] && . "$HOME/.zshrc-local"
 
- # Tool Shortcuts
- alias mci='mvn clean install'
-
- alias gradle='gradle --daemon'
- alias gi='gradle install --daemon'
- alias gci='gradle clean install --daemon'
-
- # fasd shortcuts
- alias a='fasd -a'        # any
- alias s='fasd -si'       # show / search / select
- alias d='fasd -d'        # directory
- alias f='fasd -f'        # file
- alias sd='fasd -sid'     # interactive directory selection
- alias sf='fasd -sif'     # interactive file selection
-
-alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
-
+# unalias
+unalias grc
 
 mkgo (){
 		mkdir -p $1 && cd $1
 }
-
 
 autoload predict-on
 predict-toggle() {
@@ -45,3 +28,23 @@ predict-toggle() {
   zstyle ':predict' toggle true
   zstyle ':predict' verbose true
 
+
+
+ # Tool Shortcuts
+ alias mci='mvn clean install'
+
+ alias gradle='gradle --daemon'
+ alias gi='gradle install --daemon'
+ alias gci='gradle clean install --daemon'
+
+
+
+ # fasd shortcuts
+ alias a='fasd -a'        # any
+ alias s='fasd -si'       # show / search / select
+ alias d='fasd -d'        # directory
+ alias f='fasd -f'        # file
+ alias sd='fasd -sid'     # interactive directory selection
+ alias sf='fasd -sif'     # interactive file selection
+
+alias v='f -t -e vim -b viminfo' #fasd wrapper for vi

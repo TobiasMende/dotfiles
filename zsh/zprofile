@@ -70,3 +70,9 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
+
+# Customize to your needs...
+[[ -s "$HOME/.zprofile-local" ]] && . "$HOME/.zprofile-local"
+
+
+
