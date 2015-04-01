@@ -16,8 +16,6 @@ fi
 #
 # Editors
 #
-alias less=$PAGER
-alias zless=$PAGER
 alias c=$PAGER
 #
 # Language
