@@ -40,4 +40,4 @@ done
 echo "...done"
 
 echo "TODO: Set zsh as default shell: chsh -s /bin/zsh"
-ehco "TODO: install vimpager (https://github.com/rkitover/vimpager.git)"
+echo "TODO: install vimpager (https://github.com/rkitover/vimpager.git)"
