@@ -1,0 +1,3 @@
+[submodule "vim/vim/bundle/vimpager"]
+	path = vim/vim/bundle/vimpager
+	url = https://github.com/rkitover/vimpager.git

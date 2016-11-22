@@ -20,8 +20,9 @@ fi
 
 #Ensure path arrays do not contain duplicates.
 
-export PAGER=vimpager
+export VIMPAGER=~/.vim/bundle/vimpager
 export EDITOR='vim'
 export VISUAL='vim'
 
-
+alias less=$VIMPAGER/vimpager
+alias cat=$VIMPAGER/vimcat
