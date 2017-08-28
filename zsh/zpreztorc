@@ -161,3 +161,4 @@ zstyle ':prezto:module:syntax-highlighting' color 'yes'
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
