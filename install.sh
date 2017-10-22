@@ -39,4 +39,8 @@ for file in $dotfiles; do
 done
 echo "...done"
 
+echo "Install grc"
+source grc/install.sh
+echo "... done"
+
 echo "TODO: Set zsh as default shell: chsh -s /bin/zsh"
