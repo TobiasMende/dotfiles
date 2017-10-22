@@ -1,3 +1,51 @@
 [submodule "vim/vim/bundle/vimpager"]
 	path = vim/vim/bundle/vimpager
 	url = https://github.com/rkitover/vimpager.git
+[submodule "vim/vim/bundle/YouCompleteMe"]
+	path = vim/vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/vim/bundle/numbers"]
+	path = vim/vim/bundle/numbers
+	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "vim/vim/bundle/syntastic"]
+	path = vim/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/vim-airline"]
+	path = vim/vim/bundle/vim-airline
+	url = https:/.github.com/bling/vim-airline
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/tabular"]
+	path = vim/vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/vim/bundle/dash.vim"]
+	path = vim/vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
+[submodule "vim/vim/bundle/tcomment_vim"]
+	path = vim/vim/bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim/vim/bundle/vim-fugitive"]
+	path = vim/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim/bundle/vim-autoformat"]
+	path = vim/vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat.git
+[submodule "vim/vim/bundle/vim-go"]
+	path = vim/vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim/vim/bundle/nerdcommenter"]
+	path = vim/vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim/bundle/vim-colors-solarized"]
+	path = vim/vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim/bundle/vim-easymotion"]
+	path = vim/vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
