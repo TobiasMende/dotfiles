@@ -16,7 +16,7 @@ echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+git clone --recursive https://github.com/TobiasMende/prezto.git "$HOME/.zprezto"
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
