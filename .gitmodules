@@ -49,3 +49,6 @@
 [submodule "grc"]
 	path = grc
 	url = https://github.com/garabik/grc.git
+[submodule "vim/vim/bundle/vim-airline-themes"]
+	path = vim/vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
