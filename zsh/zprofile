@@ -72,5 +72,3 @@ fi
 # Customize to your needs...
 [[ -s "$HOME/.zprofile-local" ]] && . "$HOME/.zprofile-local"
 
-
-
