@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -32,10 +25,11 @@ predict-toggle() {
  # Tool Shortcuts
  alias mci='mvn clean install'
 
- alias gradle='gradle --daemon'
- alias gi='gradle install --daemon'
- alias gci='gradle clean install --daemon'
+ alias gradle='gw'
+ alias gi='gw install'
+ alias gci='gw clean install'
 
+ alias gup='git pull --rebase'
 # Tmux
 
 alias ta='tmux attach || tmux new'
@@ -55,7 +49,9 @@ alias ta='tmux attach || tmux new'
 
 # git aliases
 alias gfp='gp --force-with-lease'
-
+gclb() {
+  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
+}
 alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -67,5 +63,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
