@@ -5,12 +5,6 @@ fi
 # Customize to your needs...
 [[ -s "$HOME/.zshrc-local" ]] && . "$HOME/.zshrc-local"
 
-# unalias
-
-mkgo (){
-		mkdir -p $1 && cd $1
-}
-
 autoload predict-on
 predict-toggle() {
   ((predict_on=1-predict_on)) && predict-on || predict-off
@@ -20,49 +14,26 @@ predict-toggle() {
   zstyle ':predict' toggle true
   zstyle ':predict' verbose true
 
-
-
- # Tool Shortcuts
- alias mci='mvn clean install'
-
- alias gradle='gw'
- alias gi='gw install'
- alias gci='gw clean install'
-
- alias gup='git pull --rebase'
-# Tmux
-
-alias ta='tmux attach || tmux new'
-
- # fasd shortcuts
- alias a='fasd -a'        # any
- alias s='fasd -si'       # show / search / select
- alias d='fasd -d'        # directory
- alias f='fasd -f'        # file
- alias sd='fasd -sid'     # interactive directory selection
- alias sf='fasd -sif'     # interactive file selection
-
 # ls replacement
  alias ls='colorls --gs --light'
  alias ll='ls -l'
  alias la='ll -A'
 
+# Application Shortcuts
+alias of="open ."
+
+
 # git aliases
+alias gup='git pull --rebase'
 alias gfp='gp --force-with-lease'
+
 gclb() {
   git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
 }
+
 alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
