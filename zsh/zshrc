@@ -1,39 +1,54 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+bindkey -e
+setopt  autocd autopushd
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-# Customize to your needs...
-[[ -s "$HOME/.zshrc-local" ]] && . "$HOME/.zshrc-local"
 
-autoload predict-on
-predict-toggle() {
-  ((predict_on=1-predict_on)) && predict-on || predict-off
-}
-  zle -N predict-toggle
-  bindkey '^Z'   predict-toggle
-  zstyle ':predict' toggle true
-  zstyle ':predict' verbose true
-
-# ls replacement
- alias ls='colorls --gs --light'
- alias ll='ls -l'
- alias la='ll -A'
-
-# Application Shortcuts
-alias of="open ."
-
-
-# git aliases
-alias gup='git pull --rebase'
-alias gfp='gp --force-with-lease'
-
-gclb() {
-  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
-}
-
-alias v='f -t -e vim -b viminfo' #fasd wrapper for vi
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# ZAP Plugin Management
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zap-zsh/exa"
+plug "davidde/git"
+plug "apachler/zsh-aws"
+
+# ZAP Theme
+plug "romkatv/powerlevel10k"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# ZSH Autosuggest Configuration https://github.com/zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5,bold'
+bindkey '^ ' autosuggest-accept
+bindkey '^T' autosuggest-toggle
+
+# Application Shortcuts
+alias of="open ."
+
+# git aliases
+alias gup='git pull --rebase'
+alias gfp='gp --force-with-lease'
+alias gca='git commit -vam'
+alias gfa='git fetch --all --prune --jobs=10'
+alias gst='git status'
+
+gclb() {
+  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
+}
 
